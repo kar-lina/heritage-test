@@ -1,0 +1,39 @@
+@import 'fonts.css';
+$grayBg: #E8E8E8;
+$primary: #337566;
+$primaryHover: #337588;
+$textBlack: #0F0F0F;
+$twxtWhite: #F5F5F5;
+$border: #DBDBDB;
+$textSecondary: #6B6B6B;
+$error: #BD3223;
+$bgYellow: #FFF7EB;
+body {
+  font-size: 15px;
+}
+html {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 15px;
+  /* @apply text-textBlack; */
+}
+a {
+  appearance: none;
+  text-decoration: none;
+  color: inherit;
+}
+a.link {
+  color: $primary;
+  border-bottom: 1px solid $primary;
+  transition: all 0.3s ease 0s;
+
+  @media (any-hover: hover){
+    &:hover{
+      color: $primaryHover;
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
+.container {
+  max-width: 560px;
+  margin: 0 auto;
+}
