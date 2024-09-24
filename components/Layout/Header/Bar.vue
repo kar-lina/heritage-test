@@ -1,22 +1,24 @@
 <template>
-  <v-toolbar class="bg-bgYellow px-10 py-1">
-    <div class="d-flex align-center">
-      <LayoutHeaderMobileMenu class="d-md-none" />
+  <v-toolbar class="bar bg-bgYellow">
+    <LayoutHeaderMobileMenu class="d-md-none" />
+    <div class="d-flex align-center flex-grow-1">
       <h1 class="logo font-bold mr-[37px]">Annoncé</h1>
       <LayoutHeaderCategoriesMenu class="d-none d-md-flex" />
     </div>
     <v-spacer></v-spacer>
     <LayoutHeaderLocation class="d-none d-md-block" />
-    <v-badge class="d-md-none flex-shrink-0 mr-2" content="1" color="primary" size="x-small">
-      <v-icon :icon="mdiPurseOutline" size="large"></v-icon>
-    </v-badge>
+    <LayoutHeaderCart class="d-md-none flex-shrink-0 mr-2" />
   </v-toolbar>
 </template>
-<script setup lang="ts">
-import { mdiMapMarker, mdiPurseOutline, mdiMenu } from '@mdi/js'
-// const drawer = ref(false)
-</script>
+
 <style scoped lang="css">
+.bar {
+  padding: 4px 19px;
+  @media (min-width: 768px){
+    padding: 4px 40px;
+      
+  }
+}
 .logo {
   font-family: 'NotoSerif';
   color: rgb(0, 0, 0);

@@ -69,7 +69,7 @@ const showMobilePhone = ref(false)
   }
   &__btn {
     padding: 16px 20px;
-    height: 56px;
+    height: 56px !important;
     text-transform: none !important;
     border-radius: 12px;
   }
