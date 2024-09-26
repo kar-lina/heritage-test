@@ -1,8 +1,8 @@
 <template>
   <v-menu v-model="menu" location="top start" origin="top start" transition="scale-transition">
     <template v-slot:activator="{ props }">
-      <v-chip v-bind="props" class="bg-grayBg" size="x-large">
-        <v-icon start :icon="mdiMenu" class="mr-0" />
+      <v-chip  v-bind="props" class="py-1 h-auto bg-grayBg" size="x-large">
+        <v-icon size="large" start :icon="mdiMenu" class="mr-0" />
         <v-avatar size="40" end>
           <v-img :src="currentUser?.img ?? ''"></v-img>
         </v-avatar>

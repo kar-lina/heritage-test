@@ -6,8 +6,8 @@
         <span class="ml-1">Ростов-на-Дону</span>
       </span>
       <v-divider vertical class="ml-8 mr-9"></v-divider>
-      <button class="mx-9 text-primary font-weight-bold">Разместить объявление</button>
-      <layout-header-user-menu />
+      <button class="mr-9 text-primary font-weight-medium">Разместить объявление</button>
+      <LayoutHeaderUserMenu />
     </div>
   </div>
 </template>

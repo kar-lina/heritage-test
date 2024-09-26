@@ -1,8 +1,8 @@
 <template>
   <nav class="nav d-flex align-center ga-2 overflow-x-auto">
-    <NuxtLink class="nav__item flex-shrink-0 bg-grayBg py-2 px-4" to="/">Товары и услуги</NuxtLink>
-    <NuxtLink class="nav__item flex-shrink-0 bg-grayBg py-2 px-4" to="/agents">Агенты</NuxtLink>
-    <NuxtLink class="nav__item flex-shrink-0 bg-grayBg py-2 px-4" to="/about">О компании</NuxtLink>
+    <NuxtLink class="nav__item flex-shrink-0 bg-grayBg py-2 px-3" to="/">Товары и услуги</NuxtLink>
+    <NuxtLink class="nav__item flex-shrink-0 bg-grayBg py-2 px-3" to="/agents">Агенты <span class="text-textSecondary">19</span></NuxtLink>
+    <NuxtLink class="nav__item flex-shrink-0 bg-grayBg py-2 px-3" to="/about">О компании</NuxtLink>
   </nav>
 </template>
 <style lang="scss" scoped>

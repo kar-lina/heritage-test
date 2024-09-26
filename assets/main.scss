@@ -1,20 +1,29 @@
 @import 'fonts.css';
-$grayBg: #E8E8E8;
+// File with general styles 
+
+$grayBg: #e8e8e8;
 $primary: #337566;
 $primaryHover: #337588;
-$textBlack: #0F0F0F;
-$twxtWhite: #F5F5F5;
-$border: #DBDBDB;
-$textSecondary: #6B6B6B;
-$error: #BD3223;
-$bgYellow: #FFF7EB;
+$textBlack: #0f0f0f;
+$twxtWhite: #f5f5f5;
+$border: #dbdbdb;
+$textSecondary: #6b6b6b;
+$error: #bd3223;
+$bgYellow: #fff7eb;
 body {
   font-size: 15px;
 }
 html {
   font-family: Inter, system-ui, sans-serif !important;
   font-size: 15px;
-  /* @apply text-textBlack; */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
 }
 a {
   appearance: none;
@@ -26,16 +35,16 @@ a.link {
   border-bottom: 1px solid $primary;
   transition: all 0.3s ease 0s;
 
-  @media (any-hover: hover){
-    &:hover{
+  @media (any-hover: hover) {
+    &:hover {
       color: $primaryHover;
       border-bottom: 1px solid transparent;
     }
   }
 }
-.container {
-  margin: 0 auto;
-  @media (min-width: 768px){
-      max-width: 560px;
-  }
+.btn {
+  text-transform: none !important;
+  border-radius: 12px !important;
+  font-weight: 500;
+  letter-spacing: 0 !important;
 }

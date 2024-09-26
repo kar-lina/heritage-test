@@ -30,7 +30,7 @@
   @font-face {
     font-family: 'NotoSerif';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-display: swap;
     src: url('/fonts/Noto/NotoSerif-SemiBold.ttf') format('ttf');
   }

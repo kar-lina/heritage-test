@@ -1,8 +1,8 @@
 <template>
-  <v-toolbar class="bar bg-bgYellow">
+  <v-toolbar class="bg-bgYellow px-2 pl-md-10 pr-md-8" :height="$vuetify.display.mdAndUp ? 64 : 56">
     <LayoutHeaderMobileMenu class="d-md-none" />
     <div class="d-flex align-center flex-grow-1">
-      <h1 class="logo font-bold mr-[37px]">Annoncé</h1>
+      <h1 class="logo">Annoncé</h1>
       <LayoutHeaderCategoriesMenu class="d-none d-md-flex" />
     </div>
     <v-spacer></v-spacer>
@@ -10,22 +10,19 @@
     <LayoutHeaderCart class="d-md-none flex-shrink-0 mr-2" />
   </v-toolbar>
 </template>
-
-<style scoped lang="css">
-.bar {
-  padding: 4px 19px;
-  @media (min-width: 768px){
-    padding: 4px 40px;
-      
-  }
-}
+<style scoped lang="scss">
 .logo {
   font-family: 'NotoSerif';
   color: rgb(0, 0, 0);
-  font-family: Noto Serif;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 600;
   line-height: 28px;
-  margin-right: 37px;
+  margin-left: 110px;
+  letter-spacing: 0;
+  font-weight: 600;
+  @media (min-width: 960px) {
+    margin-right: 37px;
+    margin-left: 0;
+  }
 }
 </style>

@@ -2,8 +2,10 @@
   <v-app>
     <!-- <Toast /> -->
     <LayoutAppHeader />
-    <NuxtPage />
-    <!-- <LayoutFooter /> -->
+    <div class="h-100">
+      <NuxtPage />
+    </div>
+    <LayoutAppFooter />
   </v-app>
 </template>
 <script setup lang="ts">

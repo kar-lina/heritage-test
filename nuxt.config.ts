@@ -35,7 +35,7 @@ export default defineNuxtConfig({
               primary: '#337566',
               primaryHover: '#337588',
               textBlack: '#0F0F0F',
-              twxtWhite: '#F5F5F5',
+              lightGray: '#F5F5F5',
               border: '#DBDBDB',
               textSecondary: '#6B6B6B',
               error: '#BD3223',

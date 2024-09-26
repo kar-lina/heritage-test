@@ -1,9 +1,7 @@
 <template>
-  <div>
+  <div class="border-b">
     <LayoutHeaderBar />
-    <div class="container">
-      <LayoutHeaderCompanyInfo class="d-none d-md-block" />
-      <LayoutHeaderNavigationMenu class="mt-2 mt-md-8" />
-    </div>
+    <LayoutHeaderCompanyInfo class="d-none d-md-block" />
+    <LayoutHeaderNavigationMenu class="my-2 my-md-8" />
   </div>
 </template>

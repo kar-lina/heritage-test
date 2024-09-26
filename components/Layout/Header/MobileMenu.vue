@@ -1,17 +1,18 @@
 <template>
   <div>
-    <v-icon :icon="mdiMenu" size="small" @click="isOpen = !isOpen"></v-icon>
-    <div
-      :class="{ 'menu': true, 'open': isOpen }"
-    >
+    <button class="pa-2">
+      <v-icon :icon="mdiMenu" " @click="isOpen = !isOpen"></v-icon>
+    </button>
+    <div :class="{ menu: true, open: isOpen }">
       <div class="d-flex">
         <v-spacer />
-        <button>
-          <v-icon :icon="mdiClose" size="large" @click="isOpen = false"></v-icon>
+        <button class="pa-2">
+          <v-icon :icon="mdiClose" size="x-large" @click="isOpen = false"></v-icon>
         </button>
       </div>
-
-      <LayoutHeaderCompanyInfo />
+      <v-container>
+        <LayoutHeaderCompanyInfo />
+      </v-container>
     </div>
   </div>
 </template>
@@ -33,6 +34,6 @@ const isOpen = ref(false)
   background-color: #fff;
 }
 .menu.open {
-  transform: translateX(0) ;
+  transform: translateX(0);
 }
 </style>
