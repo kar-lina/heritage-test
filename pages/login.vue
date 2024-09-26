@@ -5,7 +5,7 @@
       <v-text-field
         v-model="user.email"
         type="email"
-        :rules="[rulesFunctions.required,rulesFunctions.email]"
+        :rules="[validationRules.required, validationRules.email]"
         label="Email"
         variant="underlined"
         class="mb-4"
@@ -14,24 +14,28 @@
         v-model="user.password"
         type="password"
         variant="underlined"
-        :rules="[rulesFunctions.required,rulesFunctions.password]"
+        :rules="[validationRules.required, validationRules.password]"
         label="Пароль"
         class="mb-4"
+        clearable
       ></v-text-field>
-       <v-btn color="success" size="large" type="submit" variant="elevated" block> Войти </v-btn>
+      <v-btn color="success" size="large" type="submit" variant="elevated" block> Войти </v-btn>
     </v-form>
-    <p class="mt-4">Нет аккаунта? <NuxtLink class="link" to="/sign-up">Зарегистрироваться</NuxtLink></p>
+    <p class="mt-4">
+      Нет аккаунта? <NuxtLink class="link" to="/sign-up">Зарегистрироваться</NuxtLink>
+    </p>
   </v-card>
 </template>
 <script setup lang="ts">
-import { setUserCookie, rulesFunctions } from '~/lib'
-import type { LoginData } from '~/types'
-const { refreshToken, accessToken, authenticated } = storeToRefs(useAuthStore())
-const { authenticateUser } = useAuthStore()
-const { alert } = useToastStore()
 definePageMeta({
   layout: 'auth'
 })
+import { setUserCookie, validationRules } from '~/lib'
+import type { LoginData } from '~/types'
+const { refreshToken, accessToken, authenticated } = storeToRefs(useAuthStore())
+const { authenticateUser } = useAuthStore()
+const { showToast } = useToastStore()
+
 const valid = ref<boolean | null>(false)
 const user: LoginData = reactive({
   email: '',
@@ -41,11 +45,11 @@ const login = async () => {
   if (!valid.value) return
   await authenticateUser(user)
   if (authenticated.value) {
-    navigateTo('/')
-    alert('Вы вошли!')
+    showToast('Добро пожаловать!', 'success')
     setUserCookie({ userToken: accessToken.value, userRefreshToken: refreshToken.value })
+    await navigateTo('/')
   } else {
-    alert('Неверный логин или пароль')
+    showToast('Не правильный логин и пароль', 'error')
   }
 }
 </script>

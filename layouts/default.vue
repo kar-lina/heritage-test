@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <!-- <Toast /> -->
     <LayoutAppHeader />
+    <UIToast />
     <div class="h-100">
       <NuxtPage />
     </div>

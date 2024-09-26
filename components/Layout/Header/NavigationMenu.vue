@@ -14,7 +14,7 @@
   &__item {
     text-decoration: none;
     border-radius: 12px;
-    line-height: 24px;
+    height: 40px;
   }
   &__item.router-link-exact-active {
     border: 1px solid #0e0e0e;

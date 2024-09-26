@@ -24,7 +24,6 @@ export const useAuthStore = defineStore('auth', {
       }
     },
     async authenticateUser({ email, password }: LoginData) {
-      const { alert } = useToastStore()
       try {
         const data = await loginUser({ email, password })
         this.authenticated = true

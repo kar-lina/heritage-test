@@ -13,14 +13,10 @@
     "@mdi/js": "^7.4.47",
     "@nuxt/eslint": "^0.5.7",
     "@pinia/nuxt": "^0.5.4",
-    "@quasar/extras": "^1.16.12",
-    "nuxt": "^3.13.0",
-    "nuxt-quasar-ui": "^2.1.6",
+
     "pinia": "^2.2.2",
-    "quasar": "^2.17.0",
     "vue": "latest",
     "vue-router": "latest",
-    "vue3-google-map": "^0.21.0",
     "vue3-toastify": "^0.2.3",
     "vuetify-nuxt-module": "^0.18.3"
   },

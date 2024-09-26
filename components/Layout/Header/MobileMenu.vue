@@ -1,7 +1,7 @@
 <template>
   <div>
     <button class="pa-2">
-      <v-icon :icon="mdiMenu" " @click="isOpen = !isOpen"></v-icon>
+      <v-icon :icon="mdiMenu" @click="isOpen = !isOpen"></v-icon>
     </button>
     <div :class="{ menu: true, open: isOpen }">
       <div class="d-flex">

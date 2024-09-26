@@ -1,5 +1,5 @@
 <template>
-  <div class="agents d-flex flex-column ga-3" v-if="agents?.length">
+  <div class="agents d-flex flex-column gr-3" v-if="agents?.length">
     <AgentsCard v-for="(agent, idx) in agents" :id="idx"  :agent="agent"/>
   </div>
 </template>

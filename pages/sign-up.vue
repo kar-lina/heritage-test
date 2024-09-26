@@ -8,7 +8,7 @@
       <v-text-field
         v-model="user.name"
         type="email"
-        :rules="[rulesFunctions.required]"
+        :rules="[validationRules.required]"
         label="Имя"
         variant="underlined"
         class="mb-4"
@@ -17,7 +17,7 @@
       <v-text-field
         v-model="user.email"
         type="email"
-        :rules="[rulesFunctions.required, rulesFunctions.email]"
+        :rules="[validationRules.required, validationRules.email]"
         label="Email"
         variant="underlined"
         class="mb-4"
@@ -26,7 +26,7 @@
       <v-text-field
         v-model="user.password"
         type="password"
-        :rules="[rulesFunctions.required, rulesFunctions.password]"
+        :rules="[validationRules.required, validationRules.password]"
         label="Придумайте пароль"
         variant="underlined"
         class="mb-4"
@@ -35,10 +35,7 @@
       <v-text-field
         v-model="user.сonfirmPassword"
         type="password"
-        :rules="[
-          rulesFunctions.required,
-          (v) => v === user.password || 'Пароли не совпадают'
-        ]"
+        :rules="[validationRules.required, (v) => v === user.password || 'Пароли не совпадают']"
         label="Подтвердите пароль"
         variant="underlined"
         class="mb-4"
@@ -52,13 +49,13 @@
   </v-card>
 </template>
 <script setup lang="ts">
-import { rulesFunctions } from '~/lib'
-import { signUpUser } from '~/services/auth'
-import type { SignUpData } from '~/types'
-const { alert } = useToastStore()
 definePageMeta({
   layout: 'auth'
 })
+import { validationRules } from '~/lib'
+import { signUpUser } from '~/services/auth'
+import type { SignUpData } from '~/types'
+const { showToast } = useToastStore()
 const valid = ref<boolean | null>(false)
 const user: SignUpData & { сonfirmPassword: string } = reactive({
   name: '',
@@ -70,10 +67,10 @@ const signUp = async () => {
   if (!valid.value) return
   try {
     await signUpUser(user)
-    navigateTo('/login')
-    alert('Регистрация прошла успешно! Введите авторизационные данные.')
+    showToast('Регистрация прошла успешно! Введите авторизационные данные.')
+    await navigateTo({ path: '/login' })
   } catch (error) {
-    alert('Ошибка.')
+    showToast('Ошибка. Повторите попытку.', 'error')
   }
 }
 </script>

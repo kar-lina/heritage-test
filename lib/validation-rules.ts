@@ -1,4 +1,4 @@
-export const rulesFunctions = {
+export const validationRules = {
   required: (value: string) => !!value || 'Обязательное поле.',
   email: (value: string) => {
     const pattern =
@@ -9,7 +9,7 @@ export const rulesFunctions = {
     const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
     return (
       pattern.test(value) ||
-      'Неккорректный пароль. Пароль должен содержать не менее 8 символов, включая строчные и заглавные буквы, цифры и специальные символы.'
+      'Некорректный пароль. Пароль должен содержать не менее 8 символов, включая строчные и заглавные буквы, цифры и специальные символы.'
     )
   }
 }

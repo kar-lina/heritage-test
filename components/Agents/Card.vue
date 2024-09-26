@@ -2,14 +2,17 @@
   <v-dialog max-width="500">
     <template v-slot:activator="{ props: activatorProps }">
       <button v-bind="activatorProps" class="agents__card">
-        <v-img class="agents__img" aspect-ratio="1/1"  cover :src="agent.img"></v-img>
+        <v-img class="agents__img" aspect-ratio="1/1" cover :src="agent.img"></v-img>
         <div>
-          <h2 class="agents__title">{{ agent.name }}</h2>
-          <UIRating
-            :docs="agent.docs"
-            :rating="{ rating: agent.rating, reviews: agent.reviews, docs: agent.docs }"
-            class="agents__rating"
-          ></UIRating>
+          <div class="agents__info">
+            <h2 class="agents__title">{{ agent.name }}</h2>
+            <UIRating
+              :docs="agent.docs"
+              :rating="{ rating: agent.rating, reviews: agent.reviews, docs: agent.docs }"
+              class="agents__rating"
+            ></UIRating>
+          </div>
+
           <p class="agents__description">{{ agent.description }}</p>
         </div>
       </button>
@@ -48,22 +51,26 @@ const props = defineProps<{ agent: Agent }>()
     border-radius: 12px;
     margin-right: 12px;
   }
-
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
   &__title {
     font-size: 20px;
-    line-height: 28px;
+    line-height: 1.2;
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
   &__rating {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
   &__description {
-    line-height: 24px;
+    line-height: 1.6;
+    font-size: 15px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* number of lines to show */
-    line-clamp: 3;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    line-clamp: 4;
     -webkit-box-orient: vertical;
   }
 }
@@ -71,23 +78,32 @@ const props = defineProps<{ agent: Agent }>()
   .agents {
     &__card {
       display: flex;
+      align-items: center;
       gap: 20px;
       padding: 20px;
       border-radius: 20px;
     }
     &__img {
       flex: 0 0 140px;
+      width: 140px;
       border-radius: 20px;
+      margin-right: 0px;
     }
 
     &__title {
+      margin-top: 4px;
       font-size: 24px;
-      margin-bottom: 4px;
+      line-height: 1.16666666667;
+      margin-bottom: 2px;
     }
     &__rating {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     &__description {
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* number of lines to show */
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
   }
 }

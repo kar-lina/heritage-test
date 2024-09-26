@@ -62,16 +62,17 @@ const { data } = useBaseFetch<CompanyInfo>(api.COMPANY_INFO)
   .info {
     gap: 12px;
     font-size: 17px;
-    line-height: 28px;
+    line-height: 1.64705882353;
     & > * {
       padding: 0 20px;
     }
     &__title {
       font-size: 24px;
-      line-height: 28px;
+      line-height: 1.16666666667;
+    
     }
     &__location {
-      display: flex;
+      flex-direction: row;
       gap: 20px;
     }
     &__map {

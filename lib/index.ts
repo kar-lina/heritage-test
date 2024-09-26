@@ -1,2 +1,2 @@
 export { setUserCookie } from './set-user-cookie'
-export {rulesFunctions} from './rulesFunctions'
+export { validationRules } from './validation-rules'

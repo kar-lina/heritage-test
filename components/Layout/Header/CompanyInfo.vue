@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="data" class="company">
-      <v-img class="company__logo" aspect-ratio="1/1" cover :src="data?.logo??''" alt="logo" />
+      <v-img class="company__logo" aspect-ratio="1/1" cover :src="data.logo" alt="logo" />
       <h1 class="company__title">{{data?.title}}</h1>
       <UIRating v-if="reviews" :rating="reviews" class="company__rating" />
       <v-btn
@@ -43,11 +43,11 @@ const { data: reviews } = useBaseFetch<Rating>(api.COMPANY_REVIEWS)
   &__title {
     font-size: 24px;
     font-weight: 600;
-    line-height: calc(28 / 24 * 100%);
-    margin-bottom: 12px;
+    line-height: 1.16666666667;
+    margin-bottom: 10px;
   }
   &__rating {
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     line-height: 24px;
   }
   &__btn {

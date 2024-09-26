@@ -1,9 +1,12 @@
+import { setUserCookie } from '~/lib'
+
 export default defineNuxtPlugin((nuxtApp) => {
   const token = useCookie('token')
   const baseURl = useRuntimeConfig().public.apiBase as string
   const api = $fetch.create({
     baseURL: baseURl,
-    onRequest({ request, options, error }) {
+    retryStatusCodes: [401],
+    onRequest({ options }) {
       if (token?.value) {
         const headers = (options.headers ||= {})
         if (Array.isArray(headers)) {
@@ -15,11 +18,23 @@ export default defineNuxtPlugin((nuxtApp) => {
         }
       }
     },
-    async onResponseError({ request, response }) {
+    async onResponseError({ response, error }) {
+      useNuxtApp().$toast.error(response._data.message)
       if (response.status === 401) {
-        useLogout()
-        await nuxtApp.runWithContext(() => navigateTo('/login'))
-        
+        const refreshToken = useCookie('refresh_token')
+        const { data, status } = await useFetch<{ token: string; refresh_token: string }>(
+          'http://localhost:3000/api/auth/refresh-token/',
+          {
+            method: 'POST',
+            body: { refresh: refreshToken.value }
+          }
+        )
+        if (status.value === 'success' && data.value) {
+          setUserCookie({ userToken: data.value.token, userRefreshToken: data.value.refresh_token })
+        } else {
+          useLogout()
+          await nuxtApp.runWithContext(() => navigateTo('/login'))
+        }
       }
     }
   })

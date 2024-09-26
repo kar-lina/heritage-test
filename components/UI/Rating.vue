@@ -1,11 +1,11 @@
 <template>
-  <div class="rating">
+  <div v-if="rating" class="rating">
     <span v-if="rating.docs">
-      <v-icon size="small" class="mr-1" color="primary" :icon="mdiCheckDecagram"></v-icon>
+      <v-icon size="x-small" class="icon" color="primary" :icon="mdiCheckDecagram"></v-icon>
       {{ docsText }}
     </span>
     <span v-if="rating.rating">
-      <v-icon size="small" color="primary" :icon="mdiStar"></v-icon> {{ rating.rating }}</span
+      <v-icon size="x-small" class="icon" color="primary" :icon="mdiStar"></v-icon> {{ rating.rating }}</span
     >
     <span v-if="rating.reviews"> {{ rating.reviews }} отзывов</span>
     <span v-else> Нет отзывов</span>
@@ -17,13 +17,16 @@ import type { Rating } from '~/types'
 defineProps<{ rating: Rating }>()
 
 const { smAndUp } = useDisplay()
-const docsText = computed(()=>smAndUp.value? 'Документы проверены': 'Проверен')
+const docsText = computed(() => (smAndUp.value ? 'Документы проверены' : 'Проверен'))
 </script>
 <style lang="scss" scoped>
 .rating {
   display: flex;
-  line-height: 24px;
+  line-height: 1.6;
   max-width: 360px;
+  .icon {
+    margin-right: 5px;
+  }
   span {
     flex: 0 0 auto;
     display: flex;

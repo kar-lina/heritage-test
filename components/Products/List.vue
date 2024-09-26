@@ -49,15 +49,19 @@ const { data: products } = useBaseFetch<Product[]>(api.PRODUCTS, {
 .cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  row-gap: 16px;
 
   @media (min-width: 1200px) {
     grid-template-columns: repeat(4, 1fr);
+    row-gap: 40px;
   }
   @media (960px<=width<=1200px) {
     grid-template-columns: repeat(3, 1fr);
+    row-gap: 32px;
   }
   @media (500px<=width<=960px) {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 42px;
   }
 }
 .card {
@@ -101,7 +105,7 @@ const { data: products } = useBaseFetch<Product[]>(api.PRODUCTS, {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    line-height: 24px;
+    line-height: 1.6;
     font-weight: 500;
     font-size: 1rem;
     border-bottom: 1px solid #e8e8e8;

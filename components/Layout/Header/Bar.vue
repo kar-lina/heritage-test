@@ -2,7 +2,7 @@
   <v-toolbar class="bg-bgYellow px-2 pl-md-10 pr-md-8" :height="$vuetify.display.mdAndUp ? 64 : 56">
     <LayoutHeaderMobileMenu class="d-md-none" />
     <div class="d-flex align-center flex-grow-1">
-      <h1 class="logo">Annoncé</h1>
+      <NuxtLink to="/" class="logo">Annoncé</NuxtLink>
       <LayoutHeaderCategoriesMenu class="d-none d-md-flex" />
     </div>
     <v-spacer></v-spacer>
@@ -16,8 +16,8 @@
   color: rgb(0, 0, 0);
   font-size: 32px;
   font-weight: 600;
-  line-height: 28px;
-  margin-left: 110px;
+  line-height: 0.875;
+  margin-left: 100px;
   letter-spacing: 0;
   font-weight: 600;
   @media (min-width: 960px) {

@@ -7,21 +7,20 @@
  */
 export const setUserCookie = (
   cookieObj: {
-    // userId: number | string
+    userId?: number | string
     userToken: string
     userRefreshToken: string;
   } | null
 ) => {
   const token = useCookie('token')
   const refresh_token = useCookie('refresh_token')
+  const userId = useCookie('user_id')
   if (cookieObj) {
     token.value = cookieObj.userToken
     refresh_token.value = cookieObj.userRefreshToken
-    // id.value = String(cookieObj.userId)
+    userId.value = cookieObj.userId ? cookieObj.userId.toString() : ''
   } else {
-    // clear cookies
     token.value = ''
     refresh_token.value = ''
-    // id.value = ''
   }
 }

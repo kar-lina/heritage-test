@@ -1,10 +1,12 @@
 <template>
   <v-menu v-model="menu" location="top start" origin="top start" transition="scale-transition">
     <template v-slot:activator="{ props }">
-      <v-chip  v-bind="props" class="py-1 h-auto bg-grayBg" size="x-large">
+      <v-chip v-bind="props" class="py-1 h-auto bg-grayBg" size="x-large">
         <v-icon size="large" start :icon="mdiMenu" class="mr-0" />
         <v-avatar size="40" end>
-          <v-img :src="currentUser?.img ?? ''"></v-img>
+          <v-img
+            :src="currentUser?.img ? currentUser.img : 'https://cdn.vuetifyjs.com/images/john.png'"
+          ></v-img>
         </v-avatar>
       </v-chip>
     </template>
@@ -39,8 +41,11 @@
 import { mdiMenu, mdiCloseCircle, mdiBriefcase } from '@mdi/js'
 const menu = ref(false)
 const { currentUser } = storeToRefs(useAuthStore())
+const { showToast } = useToastStore()
+
 const logout = () => {
   useLogout()
   navigateTo('/login')
+  showToast('До скорой встречи!')
 }
 </script>

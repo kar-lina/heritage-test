@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-6 px-8 pb-10 bg-grayBg">
+  <div class="pt-6 px-md-8 px-4 pb-10 bg-lightGray border-t">
     <div class="d-flex ga-5 flex-wrap flex-column flex-sm-row text-textSecondary">
       <span class="text-black font-weight-medium"> © Annonce 2023 </span>
       <NuxtLink to="/about"> Документы </NuxtLink>

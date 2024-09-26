@@ -1,8 +1,7 @@
 <template>
   <v-app class="bg-primary">
-    <!-- <Toast /> -->
-    <v-container fluid max-width="800" >
-      
+    <UIToast />
+    <v-container fluid max-width="800">
       <NuxtPage />
     </v-container>
   </v-app>
