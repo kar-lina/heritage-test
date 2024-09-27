@@ -11,6 +11,7 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
+    "nuxt": "^3.13.0",
     "@mdi/js": "^7.4.47",
     "@nuxt/eslint": "^0.5.7",
     "@pinia/nuxt": "^0.5.4",
