@@ -2,7 +2,7 @@
   <div>
     <div v-if="data" class="company">
       <v-img class="company__logo" aspect-ratio="1/1" cover :src="data.logo" alt="logo" />
-      <h1 class="company__title">{{data?.title}}</h1>
+      <h1 class="company__title">{{ data?.title }}</h1>
       <UIRating v-if="reviews" :rating="reviews" class="company__rating" />
       <v-btn
         flat
@@ -13,8 +13,8 @@
         >Показать номер телефона</v-btn
       >
       <v-expand-transition>
-        <v-card flat v-show="showMobilePhone" class="mx-auto">
-          <v-card-text>{{data?.phone}}</v-card-text></v-card
+        <v-card v-show="showMobilePhone" flat class="mx-auto">
+          <v-card-text>{{ data?.phone }}</v-card-text></v-card
         >
       </v-expand-transition>
     </div>
@@ -22,12 +22,11 @@
 </template>
 <script setup lang="ts">
 import { api } from '~/services/constants'
-import { type CompanyHeading, type Rating } from '~/types'
+import type { CompanyHeading, Rating } from '~/types'
 const showMobilePhone = ref(false)
 const { data } = useBaseFetch<CompanyHeading>(api.COMPANY_HEADING)
 const { data: reviews } = useBaseFetch<Rating>(api.COMPANY_REVIEWS)
 </script>
-
 
 <style lang="scss" scoped>
 .company {

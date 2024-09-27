@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
 import type { LoginData, User } from '~/types'
-import { useToastStore } from './toast'
 import { getAuth, loginUser } from '~/services/auth'
 
 export const useAuthStore = defineStore('auth', {

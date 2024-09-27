@@ -1,4 +1,4 @@
-import { CompanyHeading } from '~/types'
+import type { CompanyHeading } from '~/types'
 
 export default defineEventHandler((): CompanyHeading => {
   return {

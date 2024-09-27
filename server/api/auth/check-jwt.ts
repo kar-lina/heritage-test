@@ -1,11 +1,11 @@
-let isCalled = false
-export default defineEventHandler((event) => {
- if (!isCalled) {
-  isCalled = true
+let isRefreshed= false
+export default defineEventHandler(() => {
+ if (!isRefreshed) {
+   isRefreshed = true
    throw createError({
      statusCode: 401,
-     statusMessage: 'Not authorized',
+     statusMessage: 'Not authorized'
    })
  }
- return 'Повторный запрос - OK'
+ return {msg: 'Повторный запрос - OK'}
 })

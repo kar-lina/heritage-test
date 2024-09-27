@@ -69,7 +69,6 @@ const { data } = useBaseFetch<CompanyInfo>(api.COMPANY_INFO)
     &__title {
       font-size: 24px;
       line-height: 1.16666666667;
-    
     }
     &__location {
       flex-direction: row;

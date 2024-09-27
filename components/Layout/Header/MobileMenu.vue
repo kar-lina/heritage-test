@@ -1,13 +1,13 @@
 <template>
   <div>
     <button class="pa-2">
-      <v-icon :icon="mdiMenu" @click="isOpen = !isOpen"></v-icon>
+      <v-icon :icon="mdiMenu" @click="isOpen = !isOpen" />
     </button>
     <div :class="{ menu: true, open: isOpen }">
       <div class="d-flex">
         <v-spacer />
         <button class="pa-2">
-          <v-icon :icon="mdiClose" size="x-large" @click="isOpen = false"></v-icon>
+          <v-icon :icon="mdiClose" size="x-large" @click="isOpen = false" />
         </button>
       </div>
       <v-container>

@@ -1,4 +1,4 @@
-import { UserLoginReturnData } from '~/types'
+import type { UserLoginReturnData } from '~/types'
 
 export default defineEventHandler((): UserLoginReturnData => {
   return {

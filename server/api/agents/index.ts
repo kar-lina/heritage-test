@@ -1,4 +1,4 @@
-import { Agent } from '~/types'
+import type { Agent } from '~/types'
 const agents: Array<Agent> = [
   {
     name: 'Дмитрий Хитрый',
@@ -53,6 +53,6 @@ const agents: Array<Agent> = [
       'Помог справиться с потерей и организовать похороны для 126 семей ну и еще чуть описания, чтобы дойти до конца строки и текст будет отсекаться'
   }
 ]
-export default defineEventHandler((event): Array<Agent> => {
+export default defineEventHandler((): Array<Agent> => {
   return agents
 })

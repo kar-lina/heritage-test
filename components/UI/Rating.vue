@@ -1,11 +1,12 @@
 <template>
   <div v-if="rating" class="rating">
     <span v-if="rating.docs">
-      <v-icon size="x-small" class="icon" color="primary" :icon="mdiCheckDecagram"></v-icon>
+      <v-icon size="x-small" class="icon" color="primary" :icon="mdiCheckDecagram" />
       {{ docsText }}
     </span>
     <span v-if="rating.rating">
-      <v-icon size="x-small" class="icon" color="primary" :icon="mdiStar"></v-icon> {{ rating.rating }}</span
+      <v-icon size="x-small" class="icon" color="primary" :icon="mdiStar" />
+      {{ rating.rating }}</span
     >
     <span v-if="rating.reviews"> {{ rating.reviews }} отзывов</span>
     <span v-else> Нет отзывов</span>
@@ -15,7 +16,6 @@
 import { mdiCheckDecagram, mdiStar } from '@mdi/js'
 import type { Rating } from '~/types'
 defineProps<{ rating: Rating }>()
-
 const { smAndUp } = useDisplay()
 const docsText = computed(() => (smAndUp.value ? 'Документы проверены' : 'Проверен'))
 </script>

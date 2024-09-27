@@ -9,7 +9,7 @@
         label="Email"
         variant="underlined"
         class="mb-4"
-      ></v-text-field>
+      />
       <v-text-field
         v-model="user.password"
         type="password"
@@ -18,7 +18,7 @@
         label="Пароль"
         class="mb-4"
         clearable
-      ></v-text-field>
+      />
       <v-btn color="success" size="large" type="submit" variant="elevated" block> Войти </v-btn>
     </v-form>
     <p class="mt-4">
@@ -27,11 +27,11 @@
   </v-card>
 </template>
 <script setup lang="ts">
+import { setUserCookie, validationRules } from '~/lib'
+import type { LoginData } from '~/types'
 definePageMeta({
   layout: 'auth'
 })
-import { setUserCookie, validationRules } from '~/lib'
-import type { LoginData } from '~/types'
 const { refreshToken, accessToken, authenticated } = storeToRefs(useAuthStore())
 const { authenticateUser } = useAuthStore()
 const { showToast } = useToastStore()

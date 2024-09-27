@@ -20,7 +20,6 @@ export default defineNuxtConfig({
   },
   vuetify: {
     moduleOptions: {
-      /* module specific options */
     },
     vuetifyOptions: {
       icons: {
@@ -44,18 +43,6 @@ export default defineNuxtConfig({
           }
         }
       }
-      /* vuetify options */
     }
-  },
-  // vite: {
-  //   css: {
-  //     preprocessorOptions: {
-  //       scss: {
-  //         preprocessorOptions: {
-  //           api: 'modern-compiler'
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+  }
 })

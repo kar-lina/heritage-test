@@ -36,7 +36,7 @@ export const useFilterCategories = () => {
    */
   watch(
     isAllCategoriesSelected,
-    (newValue, oldValue) => {
+    (newValue) => {
       if (newValue) {
         selectedCategories.value = allSubCategoriesIds.value
       }
@@ -47,7 +47,7 @@ export const useFilterCategories = () => {
   /**
    * Watches the `selectedCategories` ref and updates the route query param 'category' if the value changes.
    */
-  watch(selectedCategories, (newValue, oldValue) => {
+  watch(selectedCategories, (newValue) => {
     if (newValue.length === allSubCategoriesIds.value.length) {
       isAllCategoriesSelected.value = true
     } else {
@@ -75,15 +75,5 @@ export const useFilterCategories = () => {
       }))
     ])
   )
-  // const categoriesList = computed(() => {
-  //   const opt: Array<{ title: string; isGroupName: boolean; value?: string | number }> = []
-  //   categories?.value?.forEach((category) => {
-  //     opt.push({ title: category.name, isGroupName: true })
-  //     category.subCategories.forEach((subCategory) => {
-  //       opt.push({ title: subCategory.name, isGroupName: false, value: subCategory.id })
-  //     })
-  //   })
-  //   return opt
-  // })
   return { categoriesList, selectedCategories, isAllCategoriesSelected }
 }

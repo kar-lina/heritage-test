@@ -8,6 +8,3 @@
     <LayoutAppFooter />
   </v-app>
 </template>
-<script setup lang="ts">
-useAuth()
-</script>

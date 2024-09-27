@@ -6,13 +6,11 @@
       <NuxtLink o="/about"> О компании </NuxtLink>
       <NuxtLink to="/about"> Продавцам </NuxtLink>
       <NuxtLink to="/about"> Покупателям </NuxtLink>
-
       <span class="text-black font-weight-medium d-flex align-center ga-1">
-         <UIIconsRu />
+        <UIIconsRu />
         Annonce 2023
       </span>
     </div>
   </div>
 </template>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>

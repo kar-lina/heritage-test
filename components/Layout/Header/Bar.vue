@@ -5,7 +5,7 @@
       <NuxtLink to="/" class="logo">Annoncé</NuxtLink>
       <LayoutHeaderCategoriesMenu class="d-none d-md-flex" />
     </div>
-    <v-spacer></v-spacer>
+    <v-spacer />
     <LayoutHeaderLocation class="d-none d-md-block" />
     <LayoutHeaderCart class="d-md-none flex-shrink-0 mr-2" />
   </v-toolbar>

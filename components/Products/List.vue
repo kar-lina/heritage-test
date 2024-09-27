@@ -1,8 +1,8 @@
 <template>
   <div class="cards">
-    <div class="card" v-for="product in products" :key="product.id">
+    <div v-for="product in products" :key="product.id" class="card">
       <div class="position-relative">
-        <v-img class="card__img" :src="product.img" :alt="product.name" cover></v-img>
+        <v-img class="card__img" :src="product.img" :alt="product.name" cover />
         <div class="card__badges">
           <div v-if="product.views" class="card__badge"><v-icon :icon="mdiEye" />255</div>
           <div v-if="product.published" class="card__badge">
@@ -11,17 +11,16 @@
           </div>
         </div>
       </div>
-
       <div class="card__info">
         <h3 class="card__price">{{ product.price }} ₽</h3>
         <h3 class="card__title">{{ product.name }}</h3>
       </div>
       <div class="card__actions">
         <p v-if="!product.isActive">Объявление скрыто</p>
-        <p class="text-primary text-center" v-else-if="product.isPromoted">
+        <p v-else-if="product.isPromoted" class="text-primary text-center">
           Объявление продвигается
         </p>
-        <div class="card__btns" v-else>
+        <div v-else class="card__btns">
           <p class="text-textSecondary">Увеличьте количество просмотров</p>
           <v-btn class="btn" flat color="primary" size="large">Продвигать</v-btn>
         </div>

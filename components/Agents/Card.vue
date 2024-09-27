@@ -1,8 +1,8 @@
 <template>
   <v-dialog max-width="500">
-    <template v-slot:activator="{ props: activatorProps }">
+    <template #activator="{ props: activatorProps }">
       <button v-bind="activatorProps" class="agents__card">
-        <v-img class="agents__img" aspect-ratio="1/1" cover :src="agent.img"></v-img>
+        <v-img class="agents__img" aspect-ratio="1/1" cover :src="agent.img" />
         <div>
           <div class="agents__info">
             <h2 class="agents__title">{{ agent.name }}</h2>
@@ -10,22 +10,21 @@
               :docs="agent.docs"
               :rating="{ rating: agent.rating, reviews: agent.reviews, docs: agent.docs }"
               class="agents__rating"
-            ></UIRating>
+            />
           </div>
 
           <p class="agents__description">{{ agent.description }}</p>
         </div>
       </button>
     </template>
-
-    <template v-slot:default="{ isActive }">
+    <template #default="{ isActive }">
       <v-card title="Об агенте">
         <v-card-text>
           {{ agent.description }}
         </v-card-text>
         <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn text="Закрыть" @click="isActive.value = false"></v-btn>
+          <v-spacer />
+          <v-btn text="Закрыть" @click="isActive.value = false" />
         </v-card-actions>
       </v-card>
     </template>
@@ -33,8 +32,7 @@
 </template>
 <script setup lang="ts">
 import type { Agent } from '~/types'
-
-const props = defineProps<{ agent: Agent }>()
+defineProps<{ agent: Agent }>()
 </script>
 <style lang="scss">
 .agents {

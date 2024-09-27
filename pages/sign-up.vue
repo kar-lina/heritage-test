@@ -1,7 +1,7 @@
 <template>
   <v-card class="pa-10 mt-md-16">
     <v-card-title class="text-center mb-10"
-      >Добро пожаловать! <br />
+      >Добро пожаловать! <br >
       Давайте познакомимся!
     </v-card-title>
     <v-form v-model="valid" @submit.prevent="signUp">
@@ -13,7 +13,7 @@
         variant="underlined"
         class="mb-4"
         clearable
-      ></v-text-field>
+      />
       <v-text-field
         v-model="user.email"
         type="email"
@@ -22,7 +22,7 @@
         variant="underlined"
         class="mb-4"
         clearable
-      ></v-text-field>
+      />
       <v-text-field
         v-model="user.password"
         type="password"
@@ -31,7 +31,7 @@
         variant="underlined"
         class="mb-4"
         clearable
-      ></v-text-field>
+      />
       <v-text-field
         v-model="user.сonfirmPassword"
         type="password"
@@ -40,7 +40,7 @@
         variant="underlined"
         class="mb-4"
         clearable
-      ></v-text-field>
+      />
       <v-btn color="success" size="large" type="submit" variant="elevated" block>
         Зарегистрироваться
       </v-btn>
@@ -49,12 +49,12 @@
   </v-card>
 </template>
 <script setup lang="ts">
-definePageMeta({
-  layout: 'auth'
-})
 import { validationRules } from '~/lib'
 import { signUpUser } from '~/services/auth'
 import type { SignUpData } from '~/types'
+definePageMeta({
+  layout: 'auth'
+})
 const { showToast } = useToastStore()
 const valid = ref<boolean | null>(false)
 const user: SignUpData & { сonfirmPassword: string } = reactive({
@@ -70,7 +70,7 @@ const signUp = async () => {
     showToast('Регистрация прошла успешно! Введите авторизационные данные.')
     await navigateTo({ path: '/login' })
   } catch (error) {
-    showToast('Ошибка. Повторите попытку.', 'error')
+    showToast('Ошибка. Повторите попытку. ' + error, 'error')
   }
 }
 </script>

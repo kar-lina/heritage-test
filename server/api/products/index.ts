@@ -1,4 +1,4 @@
-import { Product } from '~/types'
+import type { Product } from '~/types'
 const products: Array<Product> = [
   {
     id: 1,
@@ -91,12 +91,11 @@ const products: Array<Product> = [
 ]
 export default defineEventHandler((event): Array<Product> => {
   const { category } = getQuery<Record<string, string>>(event)
-  const categories = category? category?.split(',') : null
+  const categories = category ? category?.split(',') : null
 
   if (categories?.length) {
     return products.filter((product) => categories.includes(String(product.subCategory)))
   } else {
     return products
   }
-  
 })

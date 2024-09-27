@@ -1,4 +1,4 @@
-import { UserLoginReturnData } from '~/types'
+import type { UserLoginReturnData } from '~/types'
 // Метод для получения данных пользователя по токену (из cookie)
 export default defineEventHandler((): UserLoginReturnData => {
   return {
